@@ -1,0 +1,34 @@
+﻿did not pass all the test  but still..
+
+             str.ToUpper();
+            char[] charArr = str.ToCharArray();
+
+            Array.Sort(charArr);
+
+
+            string newStr = new string(charArr);
+            newStr = newStr.ToLower();
+
+
+            char[] charX = newStr.ToCharArray();
+
+            Array.Sort(charX);
+
+
+            string SnewStr = new string(charX);
+            Console.WriteLine("SnewStr: " + SnewStr);
+            Console.WriteLine("Length: " + SnewStr.Length);
+
+            string pattern = @"[0 - 9a - z] +";            //@"(\w)\1";
+
+            Regex rg = new Regex(pattern, RegexOptions.IgnoreCase);
+
+            // Long string  
+            // Get all matches  
+            MatchCollection matchedAuthors = rg.Matches(SnewStr);
+
+
+            
+            int result = matchedAuthors.Count;
+
+            return result;
